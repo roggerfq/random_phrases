@@ -103,6 +103,11 @@
  <script src="data.js"></script>
  <script>
  
+ function get_random_n(list) {
+        return Math.floor((Math.random()*list.length));
+ }
+
+
  
  //resize
  var h_body = $('body').height();
@@ -184,9 +189,8 @@ function next(sec){
     if(player){
     
     
-      cnt = cnt + 1;
-      if(cnt >= data.length)
-         cnt = 0;
+      cnt = get_random_n(data);
+      
  
      
       url = data[cnt]['url']
@@ -218,4 +222,3 @@ $("#text").on({
 
 </body>
 </html>
-
